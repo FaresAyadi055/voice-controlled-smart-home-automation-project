@@ -68,4 +68,4 @@ materials:
 |microphone              | for voice recognition                   |you will need to uncomment the 3 instances of thread3 at the bottom of the code|
 |4-Relay Board           | a switch for the power consuming devices| the logic of this board is inverted  |
 
-# important! in the top of the code (line11) there is a variable named initial_url you have to initialise it with your server's url
+# important! in the top of the code (line10) there is a variable named initial_url you have to initialise it with your server's url
