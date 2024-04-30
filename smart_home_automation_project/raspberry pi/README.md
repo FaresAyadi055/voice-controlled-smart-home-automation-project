@@ -70,7 +70,7 @@ materials:
 
 # important! the program will first ask you input you server's url
 if you want to hardcode the url then in line 10
----python
+```pythonpython
 initial_url="input your server url here"
 #hardcode your url here
 initial_url=input("input your server's url here :")
