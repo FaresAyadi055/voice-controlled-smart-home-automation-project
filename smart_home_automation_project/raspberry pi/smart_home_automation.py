@@ -8,6 +8,7 @@ import board
 import threading
 #this code was tested on a raspberry pi 4
 initial_url="input your server url here"
+initial_url=input("input your server's url here :")
 stop=threading.Event()
 dht_device = adafruit_dht.DHT11(board.D25)
 GPIO.setmode(GPIO.BCM)
