@@ -7,6 +7,7 @@ import adafruit_dht
 import board
 import threading
 #this code was tested on a raspberry pi 4
+initial_url="input your server url here"
 stop=threading.Event()
 dht_device = adafruit_dht.DHT11(board.D25)
 GPIO.setmode(GPIO.BCM)
@@ -37,7 +38,7 @@ def voice_to_text():
             return text
 def get_command():
 #this api endpoint retrieves commands from a server
-        url="https://username.pythonanywhere.com/get_command"
+        url=initial_url+"/get_command"
         headers={'Content-Type':'application/json'}
         try:
             response = requests.get(url,headers=headers).text
@@ -49,7 +50,7 @@ device_list="light kitchen "
 def upload_device_list(device_list):
     #updating the sever with the list of active devices
     devices={"devices":device_list}
-    url="https://username.pythonanywhere.com/set_devices"
+    url=initial_url+"/set_devices"
     json_data = json.dumps(devices)
     headers={'Content-Type':'application/json'}
     response = requests.post(url, json=json_data,headers=headers)
@@ -68,7 +69,7 @@ def upload_dht11():
     while True:
         if stop.is_set():
             break
-        url="https://username.pythonanywhere.com/set_data"
+        url=initial_url+"/set_data"
         try:
           sensor_data = dht11()
         except Exception:
