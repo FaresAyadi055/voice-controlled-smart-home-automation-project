@@ -7,14 +7,14 @@ import adafruit_dht
 import board
 import threading
 #this code was tested on a raspberry pi 4
-initial_url="input your server url here"
-initial_url=input("input your server's url here :")
 stop=threading.Event()
 dht_device = adafruit_dht.DHT11(board.D25)
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(13, GPIO.OUT)
 p = GPIO.PWM(13, 50)  # PWM frequency is 50Hz
 p.start(10)  # Initialization at this angle the garage door is closed
+initial_url="input your server url here"
+initial_url=input("input your server's url here :")
 #this setup is specific to the MG995 servo_motor being used as a garage door
 def voice_to_text():
 #you can plug a microphone to to the raspberry pi and use a speech recognition api to input commands
