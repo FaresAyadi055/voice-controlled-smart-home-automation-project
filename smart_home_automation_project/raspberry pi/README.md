@@ -86,6 +86,6 @@ GPIO.setmode(GPIO.BCM)
 GPIO.setup(13, GPIO.OUT)
 p = GPIO.PWM(13, 50)  # PWM frequency is 50Hz
 p.start(10)  # Initialization at this angle the garage door is closed
-initial_url="input your server url here"   #hardcode your url here
-initial_url=input("input your server's url here :")   #comment this line
+initial_url="input your server url here"                                            #<====hardcode your url here
+initial_url=input("input your server's url here :")                                 #<====comment this line
 
