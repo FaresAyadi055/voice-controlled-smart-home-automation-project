@@ -79,6 +79,6 @@ import json
 import adafruit_dht
 import board
 import threading
-initial_url="input your server url here"#hardcode your url here
-initial_url=input("input your server's url here :")#comment this line
+initial_url="input your server url here"   #hardcode your url here
+initial_url=input("input your server's url here :")   #comment this line
 
