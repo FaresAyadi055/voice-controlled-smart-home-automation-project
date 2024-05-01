@@ -69,7 +69,7 @@ materials:
 |4-Relay Board           | a switch for the power consuming devices| the logic of this board is inverted  |
 
 # important! the program will first ask you input your server's url
-if you want to hardcode the url then in line 10
+if you want to hardcode the url then in line 16
 ```pythonpython
 import speech_recognition as sr
 import RPi.GPIO as GPIO
@@ -79,6 +79,13 @@ import json
 import adafruit_dht
 import board
 import threading
+#this code was tested on a raspberry pi 4
+stop=threading.Event()
+dht_device = adafruit_dht.DHT11(board.D25)
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(13, GPIO.OUT)
+p = GPIO.PWM(13, 50)  # PWM frequency is 50Hz
+p.start(10)  # Initialization at this angle the garage door is closed
 initial_url="input your server url here"   #hardcode your url here
 initial_url=input("input your server's url here :")   #comment this line
 
