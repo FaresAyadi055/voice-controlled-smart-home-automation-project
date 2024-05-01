@@ -68,7 +68,7 @@ materials:
 |microphone              | for voice recognition                   |you will need to uncomment the 3 instances of thread3 at the bottom of the code|
 |4-Relay Board           | a switch for the power consuming devices| the logic of this board is inverted  |
 
-# important! the program will first ask you input you server's url
+# important! the program will first ask you input your server's url
 if you want to hardcode the url then in line 10
 ```pythonpython
 import speech_recognition as sr
