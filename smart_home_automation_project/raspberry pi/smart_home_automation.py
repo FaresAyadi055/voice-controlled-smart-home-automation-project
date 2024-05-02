@@ -6,16 +6,15 @@ import json
 import adafruit_dht
 import board
 import threading
-#this code was tested on a raspberry pi 4
 stop=threading.Event()
 dht_device = adafruit_dht.DHT11(board.D25)
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(13, GPIO.OUT)
 p = GPIO.PWM(13, 50)  # PWM frequency is 50Hz
 p.start(10)  # Initialization at this angle the garage door is closed
-initial_url="input your server url here"
-initial_url=input("input your server's url here :")
 #this setup is specific to the MG995 servo_motor being used as a garage door
+initial_url="input your server's url here"
+initial_url=input("input your server's url here: ")
 def voice_to_text():
 #you can plug a microphone to to the raspberry pi and use a speech recognition api to input commands
     r = sr.Recognizer()
@@ -59,7 +58,7 @@ def dht11():
 #this program collect temperature in c° and humidity in % from the dht11 device
   data={"temperature":0.0,"humidity":0.0}
   temperature_c = dht_device.temperature
-  #temperature_f = temperature_c * (9 / 5) + 32 if you want temperature in fahrenheit
+  #temperature_f = temperature_c * (9 / 5) + 32
   humidity = dht_device.humidity
   if None not in [humidity,temperature_c]:
     data["temperature"]=temperature_c
@@ -93,7 +92,7 @@ def processing(text):
     locations = ("kitchen","living_room", "bedroom", "bathroom", "garage")
     devices = ("light", "tv", "fan", "door","lights","television","fans","oven")
     on = ("up","on","open","cool_down")
-    off = ("down""off","close","lower")
+    off = ("down","off","close","lower")
 
     actions = {"on": on, "off": off}
     loc = "NULL"
@@ -126,8 +125,6 @@ def error_handling(command_list):
     if command_list[1]=="fan" and command_list[0] not in ("living_room","bedroom"):
         command_list[0]="NULL"
     #only 2 fans one in the living room the other in the bedroom
-    if command_list[1] in ("tv","door","oven") and command_list[2] in ("increase","decrease"):
-        command_list[2]="NULL"
     return command_list
 
 
@@ -228,7 +225,7 @@ def voice_controlled_home_automation2():
         user_input=user_input.lower()
                 
         device_list=[]
-        if user_input == "history" :
+        if user_input == "history" or user_input=="i'm leaving the house":
             for devices in active_devices:
                 device=" ".join(devices)
                 device_list.append(device)
@@ -362,16 +359,13 @@ def servo_control(action):
 
  
  # Run the voice-controlled home automation system
-#the current program only used the main function that gets commands from the server the other on using the microphone is commented
+
 thread1=threading.Thread(target=voice_controlled_home_automation)
 thread2=threading.Thread(target=upload_dht11)
-#thread3=threading.Thread(target=voice_controlled_home_automation2)
 thread1.start()
 thread2.start()
-#thread3.start()
 thread1.join()
 thread2.join()
-#thread3.join()
 GPIO.cleanup()
   
 
