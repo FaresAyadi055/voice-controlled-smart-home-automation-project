@@ -16,4 +16,6 @@ in this page the user can input a threshold temperature if the current temperatu
 the threshold temperature the cooling system gets activated, else it will get turned off.
 
 here is a link to a copy of the project: https://x.thunkable.com/projectPage/662975a5bbc37997b95d2e5e
-(you will just need to update the urls according to the api endpoints you chose)
+you will just need to update the urls to the the one associated with your server
+go to edit app>Blocks>scroll down to advanced>API>update all the apis plus the urls in the command screen and auto cooling pages
+(you don't need to change the endpoints)
