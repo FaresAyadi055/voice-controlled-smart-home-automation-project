@@ -22,9 +22,9 @@ the living room has a tv,there is also a temperature and humidity sensor
 
 !(the dc motors and arduino power supply are being controlled through a 4 relays board and powered by a phone charger)
 
--this program has 5 types of commands:
-
 !(the program send a get request to the server every second and compare it to the previous one if new_command!=old_command it gets executed)
+#How to use it
+-this program has 5 types of commands:
 
 1- device control commands:
 to control a device in the house you need to specify three key information.
@@ -51,7 +51,7 @@ the automated cooling happens on the server side where it waits for a http post 
 temperature value and compares it to the current temperature. based on the comparison it will either turn on or 
 off the living room fan, by updating the current command stored in the server waiting to be retrieved by the pi.
 
-materials:
+#materials:
 
 | Component              | Description                             | Notes                                |
 |------------------------|-----------------------------------------|--------------------------------------|
