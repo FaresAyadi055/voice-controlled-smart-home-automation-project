@@ -61,7 +61,7 @@ off the living room fan, by updating the current command stored in the server wa
 | 5V DC Motor            | Fan for living room and bedroom         | Controlled via relay board           |
 | mini screen            | will represent a tv in a living room    |you may want to include an i2c script if you don't want to use an uno shield|
 | Red LED                | Indicator light for kitchen oven        |                                      |
-| MG995 Servo Motor      | the script is specific to this model    |we used a bearing and 3d printed an axel to rotate the door |
+| MG995 Servo Motor      | the script is specific to this model    |I used a bearing and 3d printed an axel to rotate the door |
 | DHT11                  | Temperature and humidity sensor         | Measures environmental data          |
 | 4-Relay Board          | Controls multiple devices               | Used to control DC motors and screen power supply |
 | Phone Charger          | Powers the 4-Relay Board                | Supplies power to the relay board    |
