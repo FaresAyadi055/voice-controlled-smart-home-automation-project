@@ -96,4 +96,4 @@ here are the programs keywords:
     locations = ("kitchen","living_room", "bedroom", "bathroom", "garage")
     devices = ("light", "tv", "fan", "door","lights","television","fans","oven")
     on = ("up","on","open","cool_down")
-    off = ("down""off","close","lower")
+    off = ("down","off","close","lower")
