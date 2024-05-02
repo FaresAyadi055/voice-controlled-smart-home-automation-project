@@ -72,7 +72,7 @@ off the living room fan, by updating the current command stored in the server wa
 
 # important! the program will first ask you input your server's url
 if you want to hardcode the url then in line 16
-```pythonpython
+```python
 import speech_recognition as sr
 import RPi.GPIO as GPIO
 import time
@@ -90,4 +90,10 @@ p = GPIO.PWM(13, 50)  # PWM frequency is 50Hz
 p.start(10)  # Initialization at this angle the garage door is closed
 initial_url="input your server url here"                                            #<====hardcode your url here
 initial_url=input("input your server's url here :")                                 #<====comment this line
-
+---
+here are the programs keywords:
+---python
+    locations = ("kitchen","living_room", "bedroom", "bathroom", "garage")
+    devices = ("light", "tv", "fan", "door","lights","television","fans","oven")
+    on = ("up","on","open","cool_down")
+    off = ("down""off","close","lower")
