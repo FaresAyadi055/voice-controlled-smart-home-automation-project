@@ -31,7 +31,8 @@ to control a device in the house you need to specify three key information.
 In your command which are the device location, device name, and the action you want to do (the order doesn't matter).
 the program will search for key words in the user input and fill the command list, any missing information is replaced with "Null"
 for error handing. 
-the system will output a list in the format ["location","device","action"] it will be used as an activation command line
+the system will output a list in the format ["location","device","action"] it will be used as an activation command line.
+example: "turn on the bathroom light" ===> ["bathroom",light","on"].
 
 2-list of active devices:
 by typing or saying "history" or making an http get request the program will display a list containing the devices you just activated
