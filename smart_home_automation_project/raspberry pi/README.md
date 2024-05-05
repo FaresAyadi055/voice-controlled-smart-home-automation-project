@@ -27,6 +27,7 @@ the living room has a tv,there is also a temperature and humidity sensor
 -this program has 5 types of commands:
 
 1- device control commands:
+
 to control a device in the house you need to specify three key information.
 In your command which are the device location, device name, and the action you want to do (the order doesn't matter).
 the program will search for key words in the user input and fill the command list, any missing information is replaced with "Null"
@@ -44,18 +45,22 @@ here are the programs keywords:
     actions = {"on": on, "off": off}
 ```
 2-list of active devices:
+
 by typing or saying "history" or making an http get request the program will display a list containing the devices you just activated
 (the program will automatically remove the devices that you turned off from the list)
 
 3-turn_off_everything:
+
 by typing or saying "turn off everything" or "turn off all devices" the program will 
 generate commands that will turn of the devices in the active devices list then clear it in both the program and server.
 
 4-closing the program:
+
 by typing or saying "terminate" the program will first turn off all devices before stopping the program
 the server will then replace "terminate" with "null" so the program won't shutdown when restarted
 
 5-automated cooling:
+
 the dht device upload the current temperature and humidity to the server every 10 seconds in a separate thread.
 the automated cooling happens on the server side where it waits for a http post request containing a threshold
 temperature value and compares it to the current temperature. based on the comparison it will either turn on or 
