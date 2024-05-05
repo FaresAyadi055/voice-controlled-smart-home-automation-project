@@ -40,7 +40,7 @@ here are the programs keywords:
     devices = ("light", "tv", "fan", "door","lights","television","fans","oven")
     on = ("up","on","open","cool_down")
     off = ("down","off","close","lower")
-
+```
 2-list of active devices:
 by typing or saying "history" or making an http get request the program will display a list containing the devices you just activated
 (the program will automatically remove the devices that you turned off from the list)
