@@ -65,8 +65,6 @@ def processing(text):
     text =text.replace("living room","living_room")
     text =text.replace("cool down","cool_down fan")
     #this insure that some  keywords are not split
-    text =text.replace("phone","fan")
-    #the voice recognition sometimes mishear the word fan and writes phone instead
     words = text.split()
     locations = ("kitchen","living_room", "bedroom", "bathroom", "garage")
     devices = ("light", "tv", "fan", "door","lights","television","fans","oven")
