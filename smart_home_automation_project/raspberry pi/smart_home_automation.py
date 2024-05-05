@@ -73,7 +73,6 @@ def processing(text):
     devices = ("light", "tv", "fan", "door","lights","television","fans","oven")
     on = ("up","on","open","cool_down")
     off = ("down","off","close","lower")
-
     actions = {"on": on, "off": off}
     loc = "NULL"
     dev = "NULL"
