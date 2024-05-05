@@ -1,4 +1,4 @@
-this program controls a mini smart home with a raspberry pi. It can be done offline by using a microphone or remotely 
+this program controls a mini smart home with a raspberry pi. It can be done remotely 
 with an internet connection via a server communication. In this project we are using a mobile app as the 
 user interface to establish this remote control.
 
@@ -67,7 +67,6 @@ off the living room fan, by updating the current command stored in the server wa
 | Phone Charger          | Powers the 4-Relay Board                | Supplies power to the relay board    |
 |breadbord/jumper cables | for wiring                              |                                      |
 |building materials      | we used corrugated plastic sheets       |you can use anything you want         |
-|microphone              | for voice recognition                   |you will need to uncomment the 3 instances of thread3 at the bottom of the code|
 |4-Relay Board           | a switch for the power consuming devices| the logic of this board is inverted  |
 
 # important! the program will first ask you input your server's url
