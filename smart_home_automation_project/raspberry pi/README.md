@@ -34,6 +34,7 @@ for error handing.
 the system will output a list in the format ["location","device","action"] it will be used as an activation command line.
 
 example: "turn on the bathroom light" ===> ["bathroom",light","on"].
+
 here are the programs keywords:
 ```python
     locations = ("kitchen","living_room", "bedroom", "bathroom", "garage")
