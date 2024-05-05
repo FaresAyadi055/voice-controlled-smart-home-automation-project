@@ -15,27 +15,7 @@ p.start(10)  # Initialization at this angle the garage door is closed
 #this setup is specific to the MG995 servo_motor being used as a garage door
 initial_url="input your server's url here"
 initial_url=input("input your server's url here: ")
-def voice_to_text():
-#you can plug a microphone to to the raspberry pi and use a speech recognition api to input commands
-    r = sr.Recognizer()
-    with sr.Microphone() as source:
-        print("Say something:")
-        
-        # Adjust for ambient noise and set energy threshold
-        r.adjust_for_ambient_noise(source)
-        r.energy_threshold = 4000
-        
-        while True:
-            try:
-                audio = r.listen(source)
-                print('audio recorded')
-                text = r.recognize_google(audio)
-                #you can switch api services
-                print("audio processed")   
-            except Exception as e:
-                print(f"Voice detection failed. Restarting...")
-                continue
-            return text
+
 def get_command():
 #this api endpoint retrieves commands from a server
         url=initial_url+"/get_command"
@@ -214,57 +194,6 @@ def voice_controlled_home_automation():
             active_devices = history(active_devices, command)
             print(f"output:{command}")
             command_dispatcher(command)
-
-def voice_controlled_home_automation2():
-    #this alternative main function uses the speech_to_text function instead of the api endpoint to input commands
-    active_devices = []
-    while True:
-        user_input = voice_to_text()    
-        #user_input=input("user:")
-        print(f"input:{user_input}")  
-        user_input=user_input.lower()
-                
-        device_list=[]
-        if user_input == "history" or user_input=="i'm leaving the house":
-            for devices in active_devices:
-                device=" ".join(devices)
-                device_list.append(device)
-            print(f"output:{device_list}")
-            device_list.clear()
-            continue 
-
-        #this display the list of active devices on the console
-        if "turn off everything" in user_input or "turn off all devices" in user_input:
-            commands, active_devices = turn_off_everything(active_devices)
-            
-            for off_command in commands:
-                print(f"output:{off_command}")
-                command_dispatcher(off_command)
-                #will send the command to specific function based on the matching location
-            continue
-        if user_input == "terminate":
-            commands, active_devices = turn_off_everything(active_devices)
-            for off_command in commands:
-                print(f"output:{off_command}")
-                command_dispatcher(off_command)  
-            print("output: terminating...")
-            time.sleep(3)
-            stop.set()
-            #the "terminate" special command shutdown all active devices before closing the program
-            #to leave the garage door enough time to close before terminating the program
-            GPIO.cleanup()
-            break
-        command = processing(user_input)
-        #the processing function takes the command in form of actual language then simplifies it using word matching to make it a uniform executable command
-        if "NULL" in command:
-            #if NULL in the command then there is one or more missing information
-            print(f"output: I don't understand")
-            print(f"output:{command}")
-        else:
-            active_devices = history(active_devices, command)
-            print(f"output:{command}")
-            command_dispatcher(command)
-
 
 def command_dispatcher(command):
     location=command[0]
