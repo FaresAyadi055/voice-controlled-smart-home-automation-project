@@ -1,4 +1,3 @@
-import speech_recognition as sr
 import RPi.GPIO as GPIO
 import time
 import requests
