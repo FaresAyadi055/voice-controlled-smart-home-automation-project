@@ -83,9 +83,8 @@ off the living room fan, by updating the current command stored in the server wa
 |4-Relay Board           | a switch for the power consuming devices| the logic of this board is inverted  |
 
 # important! the program will first ask you input your server's url
-if you want to hardcode the url then in line 16
+if you want to hardcode the url then in line 15
 ```python
-import speech_recognition as sr
 import RPi.GPIO as GPIO
 import time
 import requests
