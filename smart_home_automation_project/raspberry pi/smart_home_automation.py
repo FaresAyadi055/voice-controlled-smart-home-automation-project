@@ -101,6 +101,7 @@ def error_handling(command_list):
     #there is only one tv in the house found in the living room
     if command_list[1]=="oven":
         command_list[0]="kitchen"
+    #there is only 1 oven in the house found in the kitchen
     if command_list[1]=="fan" and command_list[0] not in ("living_room","bedroom"):
         command_list[0]="NULL"
     #only 2 fans one in the living room the other in the bedroom
