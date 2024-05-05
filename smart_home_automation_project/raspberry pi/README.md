@@ -33,7 +33,7 @@ the program will search for key words in the user input and fill the command lis
 for error handing. 
 the system will output a list in the format ["location","device","action"] it will be used as an activation command line.
 
-example: "turn on the bathroom light" ===> ["bathroom",light","on"].
+example: "light up the bathroom" ===> ["bathroom",light","on"].
 
 here are the programs keywords:
 ```python
