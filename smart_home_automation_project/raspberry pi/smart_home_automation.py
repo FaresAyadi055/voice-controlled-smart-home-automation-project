@@ -183,16 +183,16 @@ def voice_controlled_home_automation():
             #to leave the garage door enough time to close before terminating the program
             GPIO.cleanup()
             break
-        command = processing(user_input)
+        command_list = processing(user_input)
         #the processing function takes the command in form of actual language then simplifies it using word matching to make it a uniform executable command
-        if "NULL" in command:
+        if "NULL" in command_list:
             #if NULL in the command then there is one or more missing information
             print(f"output: I don't understand")
-            print(f"output:{command}")
+            print(f"output:{command_list}")
         else:
-            active_devices = history(active_devices, command)
-            print(f"output:{command}")
-            command_dispatcher(command)
+            active_devices = history(active_devices, command_list)
+            print(f"output:{command_list}")
+            command_dispatcher(command_list)
 
 def command_dispatcher(command):
     location=command[0]
