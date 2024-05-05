@@ -34,6 +34,12 @@ for error handing.
 the system will output a list in the format ["location","device","action"] it will be used as an activation command line.
 
 example: "turn on the bathroom light" ===> ["bathroom",light","on"].
+here are the programs keywords:
+```python
+    locations = ("kitchen","living_room", "bedroom", "bathroom", "garage")
+    devices = ("light", "tv", "fan", "door","lights","television","fans","oven")
+    on = ("up","on","open","cool_down")
+    off = ("down","off","close","lower")
 
 2-list of active devices:
 by typing or saying "history" or making an http get request the program will display a list containing the devices you just activated
@@ -90,9 +96,4 @@ p.start(10)  # Initialization at this angle the garage door is closed
 initial_url="input your server url here"                                            #<====hardcode your url here
 initial_url=input("input your server's url here :")                                 #<====comment this line
 ```
-here are the programs keywords:
-```python
-    locations = ("kitchen","living_room", "bedroom", "bathroom", "garage")
-    devices = ("light", "tv", "fan", "door","lights","television","fans","oven")
-    on = ("up","on","open","cool_down")
-    off = ("down","off","close","lower")
+
