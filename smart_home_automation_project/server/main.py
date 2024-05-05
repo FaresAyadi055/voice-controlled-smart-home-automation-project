@@ -49,7 +49,7 @@ def get_data():
 @app.route('/get_command', methods=['GET'])
 def get_command():
     command=df["command"]
-    if command[0]=="terminate":
+    if command[0].lower()=="terminate":
         df["command"]=["null"]
     # this prevent the program from shutting down if we restart it without resetting the command
     return command[0]
