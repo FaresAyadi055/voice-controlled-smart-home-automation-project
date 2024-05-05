@@ -12,15 +12,12 @@ charset-normalizer==3.3.2
 dht11==0.1.0
 idna==3.6
 mock==5.1.0
-pi-ina219==1.4.1
-PyAudio==0.2.14
 pyftdi==0.55.3
 pyserial==3.5
 pyusb==1.2.1
 requests==2.31.0
 RPi.GPIO==0.7.1
 rpi_ws281x==5.0.0
-SpeechRecognition==3.10.1
 spidev==3.6
 sysv_ipc==1.1.0
 typing_extensions==4.10.0
