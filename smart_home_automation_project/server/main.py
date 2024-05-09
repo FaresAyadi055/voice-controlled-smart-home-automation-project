@@ -43,7 +43,7 @@ def get_threshold():
 @app.route('/get_data', methods=['GET'])
 def get_data():
     data =df["dht11"]
-    data=f"temperature: {data[0]}  humidity: {data[1]}"
+    data=f"temperature: {data[0]}°C  humidity: {data[1]}%"
     return data
 
 @app.route('/get_command', methods=['GET'])
