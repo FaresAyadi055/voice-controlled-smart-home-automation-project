@@ -65,6 +65,11 @@ def set_devices():
     devices=dict_data['devices']
     df["active_devices"]=devices
     return jsonify(devices)
-
+@app.route('/set_inf', methods=['POST'])
+def set_inf():
+    json_data = request.get_json()
+    dict_data= json.loads(json_data)
+    data=dict_data['information']
+    return jsonify(data)
 if __name__ == "__main__":
     app.run(host='0.0.0.0',port=5002)
